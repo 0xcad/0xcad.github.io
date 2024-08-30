@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="haiq(r)s">
+  <meta name="author" content="Cassidy Diamond">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🍻</text></svg>">
+  <title>Drinking Activity Generator</title>
+
+  <style>
+
+	:root {
+    --main: #f4900c;
+    --alt: #ffcc4d;
+    --bg: #f8f8f8;
+  }
+
+	*{box-sizing:border-box;}
+	html{
+    background-color:var(--bg);
+    padding:0 1em;
+    font-family: system-ui;
+    line-height: 1.5;
+	}
+	main{
+    font-size:1.8em;
+    max-width:55rem;
+    margin: 0 auto;
+    color: #333;
+	}
+
+	header h1{
+    font-size: 3em;
+    font-weight: bold;
+    line-height:1;
+    color: var(--main);
+    margin-left: 1rem;
+    position: relative;
+    text-align: center;
+	}
+  header h1::before, header h1::after {
+    content: '🍺'; /*beer emoji*/
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%) rotate(-15deg);
+    /*^center vertically + rotate a bit*/
+  }
+  header h1::before {left: -1.3em;}
+  header h1::after {right: -1.3em;}
+
+  .person {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+  }
+  .person label{
+    margin-right: 1em;
+    font-size: 0.8em;
+  }
+  input {
+    padding: 4px 7.5px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 0.8em;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+  input:focus, select:focus {
+    border-color: var(--alt);
+  }
+  input[type=button], input[type=submit] {
+    cursor: pointer;
+  }
+  .person input[type=button] {
+    /*trash can icons */
+    background: none;
+    border: none;
+    font-size: 0.8em;
+    border: 2px solid transparent;
+    margin-left: auto;
+  }
+  .person input[type=button]:hover {
+    border: 2px solid #ccc;
+  }
+  .person input[type="number"]{min-width: 0;}
+  form p{
+    font-weight: bold;
+    margin: 0.5em 0 0 0;
+    font-family: monospace;
+    font-size: 1.1em;
+  }
+  input[type=submit]{
+    background: var(--main);
+    color: white;
+    transition:0.2s;
+  }
+  input[type=submit]:hover{
+    background: var(--alt);
+    transition:0.2s;
+  }
+
+  h1 + p, h2 + p, h3 + p{
+    margin-top: 0;
+  }
+  .activity {
+    color: var(--main);
+  }
+  .explanation {
+    white-space: pre-wrap;
+    margin-top: -0.5em;
+  }
+  .hidden {display: none;}
+
+  a{
+    color: var(--alt);
+    text-decoration:none;
+    font-weight:bold;
+	}
+	a:hover{text-decoration: underline; font-style:italic;}
+  footer{
+	   max-width: 70rem;
+	   margin: 0 auto;
+	   margin-top:3em;
+	   text-align: center;
+	   font-size: 1.1em;
+	   background-color: rgba(0,0,0,0.07);
+	   padding: 1px;
+	}
+	.scramble{font-family:monospace; background-color: rgba(255, 255, 255, 0.4); padding:2px;}
+
+  .bubble {
+    display: none;
+    border: 3px solid var(--alt);
+    border-radius: 100%;
+    width: 2em;
+    height: 2em;
+    background: #eee;
+    position: fixed;
+    animation-name: bubbleAnim;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    z-index: -1;
+    opacity: 0;
+    bottom: -56px;
+  }
+  @keyframes bubbleAnim {
+    from {margin-bottom: 0px; opacity: 0.6}
+    to {opacity: 0;}
+  }
+
+  @media (max-width: 1150px) {
+    header{text-align: center;}
+    header h1{display: inline;}
+    header h1::before, header h1::after{transform: rotate(-15deg);}
+  }
+  @media (max-width: 900px) {
+    header h1::after{display: none;}
+    header h1::before{
+      font-size:1.2em;
+      display: block;
+      position: static;
+      margin-top: -0.5em;
+      margin-bottom: 0.2em;
+    }
+    .person input[type="button"]{font-size:1em;}
+    input[type="button"]:not(.person input[type="button"]), input[type=submit]{
+      font-size: 0.9em;
+      margin-top: 0.8em;
+    }
+  }
+  @media (max-width: 570px) {
+    header h1{font-size: 2.2em;}
+    .person label{ min-width: 100px; margin-right: 0.5em;}
+    .person input[type="button"]{ min-width: 50px;}
+    .person input[type="number"]{flex: 1;}
+    h1{font-size: 1.5em;}
+  }
+  @media (max-width: 400px) {
+    header h1{font-size: 18vmin;}
+  }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Drinking Activity Generator</h1>
+    </header>
+    <p>with a group of friends and struggling with picking an activity? at a party and want to spice things up, but don't know what fits the vibe?</p>
+    <p>enter in your group members' BAC and receive a scientifically generated activity based on the collective drunkeness of the group.</p>
+    <h2>group members</h2>
+    <form onsubmit='generateActivity(); return false;' action="#activityH1">
+      <div id='personContainer'>
+        <div class='person'>
+          <label for="person0">person 1:</label>
+          <input type="number" step="0.01" value="0.06" min="0" max="1" name="person0" id="person0">
+          <input type="button" value="🗑️" aria-label="delete person" onclick="removePerson(this)">
+        </div>
+      </div>
+      <input type="button" value="add person" onclick="addPerson()">
+      <input type="submit" value="generate activity">
+      <p>group average BAC: <span id='average'>0.06</span></p>
+    </form>
+    <h1 id='activityH1'><span id='activityMessage'>waiting for form submission</span> <span id='activity' class='activity'></span></h1>
+    <p class='explanation hidden'>
+    </p>
+  </main>
+
+  <footer>
+    <p>made by <a href="index.html"><span class="scramble">Cassidy</span></a> while cruisin'</p>
+  </footer>
+
+  <div id='bubblesContainer'>
+  </div>
+
+  <script src='js/scramble.js'></script>
+  <script>
+    function getRandomArbitrary(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    /* add a ton of bubbles, then scatter their initial positions and sizes */
+    function doBubbles() {
+      var container = document.getElementById('bubblesContainer');
+      var el;
+      var size;
+      var position;
+      var distance;
+      var speed; /* pixels per second */
+      var loopCount = Math.floor(getRandomArbitrary(15,20));
+      for (var i=0; i < loopCount; i++){
+        el = document.createElement('div');
+        el.classList.add('bubble');
+        size = getRandomArbitrary(24,56);
+        el.style.display = 'block';
+        el.style.height = size + "px";
+        el.style.width = size + "px";
+        position = (i * (100/loopCount) + getRandomArbitrary(-5,6));
+        if (position < 0) { position = getRandomArbitrary(0,3); }
+        el.style.left = position + "%";
+        /*^bubbles are spread out evenly but have some offset to them*/
+        distance = getRandomArbitrary(30, 50); /* bubbles go 30%-50% of height */
+        el.style.marginBottom = distance + "vh";
+        el.style.animationDelay = getRandomArbitrary(0,4) + "s";
+        /* v = d/t => t = d/v */
+        speed = getRandomArbitrary(50, 75);
+        el.style.animationDuration = ((distance/100) * window.innerHeight / speed) + "s";
+        container.appendChild(el);
+      }
+    }
+
+    var personContainer = document.getElementById('personContainer');
+    function addPerson() {
+      num = document.getElementsByClassName('person').length;
+      person = document.createElement('div');
+      person.classList.add('person'); /*container*/
+
+      label = document.createElement('label');
+      label.setAttribute('for', 'person' + num);
+      label.innerText = 'person ' + (num + 1) + ':';
+      person.appendChild(label); /* label */
+
+      input = document.createElement('input');
+      input.setAttribute('type', 'number');
+      input.setAttribute('step', '0.01');
+      input.setAttribute('value', '0.06');
+      input.setAttribute('min', '0');
+      input.setAttribute('max', '1');
+      input.setAttribute('name', 'person' + num);
+      input.id = 'person' + num;
+      input.addEventListener('change', updateAverage);
+      /*^update average on change*/
+      person.appendChild(input); /* input */
+
+      trash = document.createElement('input');
+      trash.setAttribute('type', 'button');
+      trash.value = '🗑️';
+      trash.setAttribute('aria-label', 'delete person');
+      trash.setAttribute("onclick","removePerson(this);");
+      person.appendChild(trash); /* trash */
+
+      personContainer.appendChild(person);
+      updateAverage();
+    }
+
+    function getInputs(){
+      return  document.querySelectorAll('input[type=number]');
+    }
+    function updateAverage() {
+      inputs = getInputs();
+      total = 0;
+      for (el of inputs) {
+        total += Number(el.value);
+      }
+      average = (total / inputs.length).toFixed(2);
+      averageEl = document.getElementById('average');
+      averageEl.innerText = average;
+      return average;
+    }
+    function removePerson(buttonEl) {
+      if (getInputs().length <= 1){ return;}
+      buttonEl.parentNode.parentNode.removeChild(buttonEl.parentNode);
+      /* ^remove the element */
+      inputs = getInputs();
+      for (var i=0; i< inputs.length; i++){
+        el = inputs[i];
+        children = el.parentNode.children;
+
+        children[0].setAttribute('for', 'person' + i);
+        children[0].innerText = 'person ' + (i + 1) + ':'; /*label*/
+
+        children[1].id = 'person' + i;
+        children[1].name = 'person' + i; /* input */
+      }
+      /* ^renumber the remaining elements */
+      updateAverage();
+    }
+
+    var repetitionCount = 0;
+    var timer;
+    var activityEl = document.getElementById('activity');
+    var activityMessageEl = document.getElementById('activityMessage');
+    var explanationEl = document.getElementsByClassName('explanation')[0];
+    var options = ['beer pong', 'truth or dare', 'kings cup', '20 questions', 'dancing', 'would you rather', 'never have i ever', 'board games', 'charades', 'go for a walk', 'drink water', 'movie', 'karaoke'];
+    function generateActivity() {
+      repetitionCount = 0;
+      explanationEl.classList.add('hidden');
+      activityMessageEl.innerText = 'your activity is... ';
+      activityEl.scrollIntoView({behavior: "smooth"});
+
+      timer = setInterval(generating, 100);
+      return false;
+    }
+    function generating(){
+      /*flash text in the spot every some miliseconds*/
+      activityEl.innerText = options[repetitionCount % options.length];
+      repetitionCount++;
+      if (repetitionCount > 50){
+        clearInterval(timer);
+        generated();
+      }
+    }
+    function generated(){
+      average = updateAverage();
+      explanationEl.classList.remove('hidden');
+      adjective = "like they're just getting started";
+      if (average > 0.3){adjective = "pretty fucked up";}
+      else if (average > 0.24){adjective = "like they're definitely ready for anything";}
+      else if (average > 0.16){adjective = "like they've been at it for a bit";}
+      else if (average > 0.08){adjective = "like they're warming up to the night";}
+      explanationEl.innerText = "with an average group BAC of " + average + ", your group seems " + adjective + ". "
+
+      /*activityEl.innerText = 'board games';
+      if (average > 0.08) {
+        activityEl.innerText = 'karaoke';
+        explanationEl.innerText += "with the group loosening up karaoke should be a fun activity drawing excited participation."
+      }
+      else{
+        explanationEl.innerText += "board games might be a fun activity to enjoy while mostly-sober. maybe implement a few rules to start drinking to get things started?"
+      }*/
+
+      activityEl.innerText = 'driving!';
+      explanationEl.innerText += "thankfully, driving is *always* a good activity for any group of any level of intoxication! your friends will love the feeling of a warm steering wheel under their hands, the gentle sound of an engine running, and the back-and-forth sway of your turning vehicle as you drive around town. grab those keys!\n\npress the button again to generate a new activity.";
+    }
+
+    addPerson();
+    addPerson();
+    addPerson(); /*start with 4 group members*/
+    updateAverage();
+
+    doBubbles();
+  </script>
+</body>
+</html>

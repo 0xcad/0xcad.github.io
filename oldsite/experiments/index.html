@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title># experiments</title>
+    <style>
+      body{
+        max-width:40rem;
+        margin: 1em auto;
+        padding: 0 1em;
+        box-sizing: border-box;
+        font-family: monospace;
+        border-top: 1px solid;
+        font-size: 1.2em;
+        line-height: 1.5;
+      }
+      pre {
+        white-space: pre-wrap;
+        padding: 1em;
+      }
+      details[open=''] {
+        border-bottom: 1px solid;
+        margin-bottom: 1rem;
+      }
+      li{margin-bottom: 0.5rem;}
+      @media (prefers-color-scheme: dark) {
+        html{background: #333; color: #fefefe;}
+        pre {background: #444;}
+        a   {color: pink;}
+      }
+      @media (prefers-color-scheme: light) {
+        html{background: #fefefe; color: #111;}
+        pre {background: #eee;}
+        a   {color: hotpink;}
+      }
+    </style>
+  </head>
+  <body>
+    <h1># experiments</h1>
+    <a href='../index.html'>↩ back</a>
+    <ul>
+      <!--<li><details><summary>2022-02-10 wordle bot</summary><script async id="asciicast-0nJbul4z3zbZs7ncBWEuLS7zH" src="https://asciinema.org/a/0nJbul4z3zbZs7ncBWEuLS7zH.js"></script></details></li>-->
+      <li><details><summary>2023-03-06 ascii raycasting</summary><script async id="asciicast-wuj7releXjFN4fbwVeF457Dpp" src="https://asciinema.org/a/wuj7releXjFN4fbwVeF457Dpp.js"></script></details></li>
+      <li><details><summary>2023-03-31 `chisel_editor`</summary>
+        <pre>my french course offered a poetry workshop taught by this Quebecois poet. through zoning out (I was tired, ok?) and my mediocre comprehension of the french language, I picked up something like this:
+
+> Poetry is fundamentally differerent from other art forms. When you make a statue, you start with a stone block, everything you can do is there, and it is the artist's job to carve out the statue. But when you write, you start with nothing and you build up into your poem.
+
+so sculpting is a process of removal and writing is a process of addition.
+
+`chisel_editor` reimagines writing as a process of removal. a user starts out with an infinite block of characters, your stone, and can only remove characters from it, likening the creation of a poem to that of a statue.</pre>
+        <script async id="asciicast-Rz3sq0zmZMHiAQMsJTX4uJJVy" src="https://asciinema.org/a/Rz3sq0zmZMHiAQMsJTX4uJJVy.js"></script>
+        </details>
+      </li>
+
+      <li>
+        <details><summary>2023-04-29_api_abuse.md</summary>
+          <div class='markdown'><a href='2023-04-20_api_abuse.md'>2023-04-29_api_abuse.md</a></div>
+        </details>
+      </li>
+
+      <li>
+        <details><summary>2023-05-01 wikitooltips</summary>
+          <p>somewhat impractical javascript bookmarklet designed to mimic the functionality of wikipedia page preview, anywhere on the web.</p>
+          <p><a href="javascript:(function()%7B(function()%20%7B%0A%20%20%20%20function%20spanify(%20paragraph%20)%20%7B%0A%20%20%20%20%20%20%20%20paragraph.innerHTML%20%3D%20paragraph.innerHTML.replace(%20%2F(%3C%5Cw.*%3F%3E.*%3F%3C%5C%2F%5Cw%2B%3E%7C(%3F%3A%5BA-Z%5D%5Cw*%20%3F)%2B(%3F%3C!%20)%7C%5B%5Cd%5Cw'%26%5D%2B)%2Fg%2C%20'%3Cspan%3E%24%26%3C%2Fspan%3E'%20)%3B%0A%20%20%20%20%7D%0A%20%20%20%20var%20timeoutId%3B%0A%20%20%20%20var%20doMouseOver%20%3D%20true%3B%0A%20%20%20%20var%20currentIframes%20%3D%20%5B%5D%3B%0A%20%20%20%20var%20searchAbleTages%20%3D%20%5B%22P%22%2C%20%22LI%22%2C%20'H1'%2C%20'H2'%2C%20'H3'%2C%20'H4'%2C%20'H5'%2C%20'H6'%5D%3B%0A%0A%20%20%20%20function%20handleMouseOver(event)%20%7B%0A%20%20%20%20%20%20%20%20if%20(timeoutId)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20clearTimeout(timeoutId)%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20timeoutId%20%3D%20setTimeout(function()%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20Your%20function%20code%20goes%20here%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20target%20%3D%20searchAbleTages.includes(event.target.parentNode.tagName)%20%3F%20event.target.parentNode%20%3A%20event.target%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20(searchAbleTages.includes(target.tagName))%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20handleTarget(target%2C%20event.clientX%2C%20event.clientY)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%2C%201000)%3B%0A%20%20%20%20%7D%0A%20%20%20%20function%20handleMouseOut()%20%7B%0A%20%20%20%20%20%20%20%20if%20(timeoutId)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20clearTimeout(timeoutId)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20timeoutId%20%3D%20null%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20function%20handleTarget%20(target%2C%20eventX%2C%20eventY)%7B%0A%20%20%20%20%20%20%20%20%2F%2Fcopy%20target%2C%20spanify%20it%2C%20get%20span%2C%20then%20replace%20target%20with%20old%20copy%0A%20%20%20%20%20%20%20%20var%20targetClone%20%3D%20target.cloneNode(true)%3B%0A%20%20%20%20%20%20%20%20spanify(target)%3B%0A%20%20%20%20%20%20%20%20var%20targetSpan%20%3D%20document.elementFromPoint(eventX%2C%20eventY)%3B%0A%20%20%20%20%20%20%20%20var%20rect%20%3D%20targetSpan.getBoundingClientRect()%3B%0A%20%20%20%20%20%20%20%20var%20x%20%3D%20rect.left%20%2B%20rect.width%20%2F%202%20%2B%20window.pageXOffset%3B%0A%20%20%20%20%20%20%20%20var%20y%20%3D%20rect.top%20%2B%20window.pageYOffset%3B%0A%20%20%20%20%20%20%20%20target.parentNode.replaceChild(targetClone%2C%20target)%3B%0A%0A%20%20%20%20%20%20%20%20%2F%2Fcreate%20tooltip%20at%20this%20node%0A%20%20%20%20%20%20%20%20if%20(targetSpan.tagName%20%3D%3D%3D%20'SPAN')%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20(!currentIframes.includes((x%20%2B%20''%20%2B%20y)))%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20currentIframes.push(x%20%2B%20''%20%2B%20y)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20createToolTip(targetSpan.innerText%2C%20x%2C%20y)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20function%20createToolTip(text%2C%20x%2C%20y)%7B%0A%20%20%20%20%20%20%20%20var%20div%20%3D%20document.createElement('div')%3B%0A%20%20%20%20%20%20%20%20var%20iframe%20%3D%20document.createElement('iframe')%3B%0A%20%20%20%20%20%20%20%20iframe.src%20%3D%20'https%3A%2F%2Fen.wikipedia.com%2Fwiki%2F'%20%2B%20text%3B%0A%20%20%20%20%20%20%20%20div.style.position%20%3D%20'absolute'%3B%0A%20%20%20%20%20%20%20%20div.style.top%20%3D%20y%20%2B%20'px'%3B%0A%20%20%20%20%20%20%20%20div.style.left%20%3D%20x%20%2B%20'px'%3B%0A%20%20%20%20%20%20%20%20div.style.width%20%3D%20'600px'%3B%0A%20%20%20%20%20%20%20%20div.style.height%20%3D%20'400px'%3B%0A%20%20%20%20%20%20%20%20div.style.transform%20%3D%20%22scale(0.5)%20translate(-50%25%2C%20calc(-100%25%20-%2015px))%22%3B%0A%20%20%20%20%20%20%20%20div.style.transformOrigin%20%3D%20'top%20left'%3B%0A%20%20%20%20%20%20%20%20div.classList.add('wiki-iframe')%3B%0A%20%20%20%20%20%20%20%20document.body.appendChild(div)%3B%0A%20%20%20%20%20%20%20%20div.appendChild(iframe)%3B%0A%20%20%20%20%20%20%20%20iframe.addEventListener('mouseover'%2C%20()%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20iframe.setAttribute('data-wiki-frame-remove'%2C%20'true')%3B%0A%20%20%20%20%20%20%20%20%7D)%3B%0A%20%20%20%20%20%20%20%20iframe.addEventListener('mouseout'%2C%20()%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20(iframe.hasAttribute('data-wiki-frame-remove'))%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20div.remove()%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20index%20%3D%20currentIframes.indexOf(x%20%2B%20''%20%2B%20y)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20(index%20%3E%20-1)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20currentIframes.splice(index%2C%201)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D)%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20var%20style%20%3D%20document.createElement('style')%3B%0A%20%20%20%20style.innerHTML%20%3D%20%60.wiki-iframe%20%7Bz-index%3A%201%3B%20border%3A1px%20solid%20black%3B%7D%0A%20%20%20%20.wiki-iframe%3A%3Aafter%20%7B%0A%20%20%20%20content%3A%20''%3B%0A%20%20position%3A%20absolute%3B%0A%20%20top%3A%20100%25%3B%0A%20%20left%3A%2050%25%3B%0A%20%20margin-left%3A%20-20px%3B%0A%20%20border-width%3A%2020px%3B%0A%20%20border-style%3A%20solid%3B%0A%20%20border-color%3A%20black%20transparent%20transparent%20transparent%3B%0A%20%20%20%20%7D%0A%20%20%20%20.wiki-iframe%20iframe%20%7Bwidth%3A100%25%3B%20height%3A100%25%3B%7D%60%3B%0A%20%20%20%20document.head.appendChild(style)%3B%0A%0A%20%20%20%20document.addEventListener('mouseover'%2C%20handleMouseOver)%3B%0A%20%20%20%20document.addEventListener('mouseout'%2C%20handleMouseOut)%3B%0A%7D)()%3B%7D)()%3B">wikitooltips bookmarklet</a>.</p>
+          <video controls=''><source src='wikitooltips.mp4' type='video/mp4'></video>
+        </details>
+      </li>
+      <li>
+        <details><summary>2023-05-17_more_api_abuse.md</summary>
+          <div class='markdown'><a href='2023-05-17_more_api_abuse.md'>2023-05-17_more_api_abuse.md</a></div>
+        </details>
+      </li>
+
+
+    </ul>
+  <script>
+    //include markdown pages with XML requests
+    var markdownTags = document.getElementsByClassName('markdown');
+    var path = document.URL.substr(0,document.URL.lastIndexOf('/'));
+    var el; var req;
+    for (var i = 0; i < markdownTags.length; i++){
+      el = markdownTags[i];
+      req = new XMLHttpRequest();
+
+      req.open('GET', path + '/' + el.innerText, false);
+      req.send(null);
+
+      if(req.status == 200) {
+         renderMarkdown(el, req.responseText);
+      }
+
+    }
+
+    function renderMarkdown(el, markdown) {
+      el.innerHTML = '<pre>' + markdown + '</pre>';
+    }
+  </script>
+  </body>
+</html>

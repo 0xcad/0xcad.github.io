@@ -1,0 +1,257 @@
+<!--hey :))-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="cassidy diamond's personal website">
+  <meta name="author" content="cassidy diamond">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <title>cassidy diamond</title>
+
+</head>
+
+<body>
+  <nav>
+    <ul class='nav-list'>
+      <li><a href="#about">about</a></li>
+      <li><a href="#projects">projects</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+    <div class="top-dots">
+      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    </div>
+    <div class='hero'>
+      <div>
+      <h1>Cassidy Diamond</h1>
+      <h1 class='shadow'>Cassidy Diamond</h1>
+      <p>CMU '25, Computer Science and Mathematical Sciences</p>
+      </div>
+    </div>
+    </section>
+    <section id="about">
+      <!--<div class="top-dots float-left">░░░░░░░</div>-->
+      <h1 class='overlayed'>About</h1>
+      <div class="col-two">
+        <div>
+          <div class="text-container">
+            <p><span class="small-caps">I am an undergraduate fourth-year</span> at Carnegie Mellon University studying Computer Science and Mathematical Sciences. I'm currently seeking work as a full stack developer or systems engineer, but present jobs include radio station Chief Engineer, bike mechanic, and school mascot. I'm passionate about music, biking, creative programming, and urban spaces.</p>
+            <div class="mt-4">
+              <a href="assets/Cassidy_Diamond_resume.pdf" target="_blank"><button class='button mr-2 mb-2'>Resume</button></a>
+              <a href="mailto:cdiamond@cmu.edu?subject=hey"><button class='button'>Email</button></a>
+            </div>
+          </div>
+        </div>
+        <div class='about-image'>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <h1 class='overlayed'>Projects</h1>
+
+      <div class="projects-radio">
+        <input type="radio" id="html" name="show_projects" value="professional">
+        <label for="html">show only resume projects</label>
+        <input type="radio" id="css" name="show_projects" value="all" checked="">
+        <label for="css">show all projects (fun!)</label>
+      </div>
+
+      <div>
+
+      <div class="project"><!--may 2023-aug 2024-->
+        <div class='image-container'>
+          <img src="assets/images/diderot_1.png" loading="lazy"/>
+          <img src="assets/images/diderot_3.png" loading="lazy"/>
+          <img src="assets/images/diderot_2.webp" loading="lazy"/>
+          <img src="assets/images/diderot_4.jpg" loading="lazy"/>
+        </div>
+        <div>
+        <div class='text-container'>
+          <h2>Diderot</h2>
+          <p class='tagline'>full stack developer and entrepreneurial lead for CMU tech startup</p>
+          <ul>
+            <li>Received $550,000 in funding from NSF, chosen as project Entrepreneurial Lead for I-Corps Program</li>
+            <li>Created a virtual AI teaching assistant for university courses using generative large language models</li>
+            <li>Managed cloud infrastructure for webservers, API endpoints, and load balancers</li>
+            <li>Supported hundreds of students using our project and thousands of daily API hits</li>
+            <li>Adapated technology for industry use with "Shopify-style" Javascript widget</li>
+            <li>Received and worked upon valuable feedback from our Y Combinator application and discussion with Kleiner Perkins VC</li>
+          </ul>
+          <p>technologies: OpenAI, Typescript/React, Django, AWS, Docker, Postgresql</p>
+        </div>
+        </div>
+      </div>
+
+      <div class="project"><!--aug 2024-->
+        <div class='image-container'>
+          <img src="assets/images/wrct_db_1.png" loading="lazy"/>
+          <img src="assets/images/wrct_db_2.png" loading="lazy"/>
+          <img src="assets/images/wrct_db_3.png" loading="lazy"/>
+        </div>
+        <div>
+        <div class='text-container'>
+          <h2>db.wrct.org</h2>
+          <p class='tagline'>comprehensive music database for college radio station</p>
+          <p>After maintaining WRCT's old music database -- originally created in 2002, in Perl -- I rebuilt the system from scratch in Summer 2024 to replace what was previously a nightmare for UX, modularity, and portability. Several previous attempts have been made to replace the database before this, but this was the first to successfully be completed and deployed.</p>
+          <p>For this project I worked closely with community members on designing their ideal system for cataloguing and reviewing music, and focused on code longevity and documentation. I fully expect this web application to work for the next 20 years, or however long it's necessary for the radio station.</p>
+          <p>technologies: Django, Docker, nginx, Perl, MariaDB</p>
+        </div>
+        </div>
+      </div>
+
+      <div class="project"><!--may 2023-aug 2024-->
+        <div class='image-container'>
+          <img src="assets/images/wrct.png" loading="lazy"/>
+          <img src="assets/images/wrct.jpg" loading="lazy"/>
+        </div>
+        <div>
+        <div class='text-container'>
+          <h2>WRCT Chief Engineer</h2>
+          <p class='tagline'>chief engineer of college radio station</p>
+          <p>Since Spring of 2022, I've been working with WRCT's engineering department on various tasks around the station. <i>Freshman year:</i> I created a reverse proxy server to host our infrastructure, migrated web servers to HTTPS, and created scripts to automate these processes. <i>Sophomore year:</i> I reconstructed, upgraded, and containerized legacy programs with Docker, migrating everything to a cloud Linux server I configured. This was the end of a years-long effort to modernize the radio station's backened. <i>Junior year:</i> I completely migrated how we track and manage what gets played on air, switching the station to an industry standard and away from older, custom software.</p>
+          <p>Throughout all of these processes I've written extensive documentation, trained teammates in relevant skills, and worked closely with station members to create software and infrastructure that met our needs.</p>
+          <p>I also spun straight musical fire I'd serve regularly from the station's vinyl collection.</p>
+          <p>technologies: Linux, Bash, Docker, Nginx, SQL, PHP, Python, Perl, SMTP servers, DNS routing, Ham Radio</p>
+        </div>
+        </div>
+      </div>
+
+      <div class="project fun"><!--aug 2024-->
+        <div class='image-container'>
+          <img src="assets/images/barrel_raft.jpg" loading="lazy"/>
+        </div>
+        <div>
+        <div class='text-container'>
+          <h2>barrel raft</h2>
+          <p class='tagline'>diy boating project</p>
+          <p>I built a raft from scratch and hauled it myself to Pittsburgh's Monongahela river. wood, wheels, and building materials were reclaimed and recycled.</p>
+          <p>technologies: CAD, carpentry</p>
+        </div>
+        </div>
+      </div>
+
+      <div class="project fun"><!--aug 2024-->
+        <div class='image-container'>
+          <img src="assets/images/time_signatures.png" loading="lazy"/>
+        </div>
+        <div>
+        <div class='text-container'>
+          <h2>time:signatures</h2>
+          <p class='tagline'>"modernist musical composition"</p>
+          <p>a modernist composition where the time signature changes with the current hour and minute. the minute dictates how many beats a measure is subdivided into. the hour dictates how many beats are in a measure. the first note of each measure is stressed.</p>
+          <p>technologies: Javascript, HTML, CSS</p>
+          <a href="timesignatures/index.html"><button class='button'>view website</button></a>
+        </div>
+        </div>
+      </div>
+
+      <div class="project fun"><!--jul 2024-->
+        <div class='image-container'>
+          <img src="assets/images/NYFE_1.png" loading="lazy"/>
+          <img src="assets/images/NYFE_2.png" loading="lazy"/>
+        </div>
+        <div>
+        <div class='text-container'>
+          <h2>New York Fruit Exchange</h2>
+          <p class='tagline'>tracking the prices of fruits in nyc</p>
+          <p>The US Department of Agriculture releases daily data dumps for agricultural commodities traded in various national markets. NYFE indexes that information to produce daily price reports and tracks sales of fruits over time, viewing them like any other tradable good or stock.</p>
+          <p>technologies: Django, Javascript, Docker, nginx</p>
+          <a href="https://fruit.wrct.org" target="_blank"><button class='button'>view website</button></a>
+        </div>
+        </div>
+      </div>
+
+      <div class="project fun"><!--jul 2024-->
+        <div class='image-container'>
+          <img src="assets/images/pdhaquotidien_1.JPG" loading="lazy"/>
+          <img src="assets/images/pdhaquotidien_2.JPG" loading="lazy"/>
+        </div>
+        <div>
+        <div class='text-container'>
+          <h2>PDHA quotidien</h2>
+          <p class='tagline'>automatic daily zine for friend groupchat</p>
+          <p>After ditching my iPhone for a flipphone, I wanted a way to keep track of my friends' texts that still felt sufficiently unhurried and low-tech. Now, every morning at 8am a server automatically collects the past 24 hours of messages, compiles them into a printable zine format, and creates a print job on my university network for me.</p>
+          <p>technologies: Python, Lua, Docker, LaTeX</p>
+        </div>
+        </div>
+      </div>
+
+      <div class="project fun"><!--feb 2024-->
+        <div class='image-container'>
+          <img src="assets/images/ski_bike.JPG" loading="lazy"/>
+          <video src="assets/images/ski_bike.mp4" controls></video>
+        </div>
+        <div>
+        <div class='text-container'>
+          <h2>ski bike</h2>
+          <p class='tagline'>full sendy diy snow shredder</p>
+          <p>I cut up an old pair of skis I thrifted using my friend's bandsaw, built some wooden mounts for them, and bolted everything to a child's mountain bike I was able to get for free. I replaced the pedals with some pipe to stand on and then everything was ready for the snow.</p>
+          <p>The ski bike combines the joys and risks of both downhill mountain biking and downhill skiing. There are no brakes.</p>
+          <p>technologies: CAD, carpentry</p>
+        </div>
+        </div>
+      </div>
+
+      <div class="project fun"><!--mar 2023 (?)-->
+        <div class='image-container'>
+          <script src="https://asciinema.org/a/JyIJcpNl2T9ur6nqALkW1loCm.js" id="asciicast-JyIJcpNl2T9ur6nqALkW1loCm" async="true"></script>
+          <script src="https://asciinema.org/a/va0fSFSb8JRs9NENzcLT8273m.js" id="asciicast-va0fSFSb8JRs9NENzcLT8273m" async="true"></script>
+          <!--<img src="assets/images/chisel.gif" loading="lazy"/>
+          <img src="assets/images/chisel_alt.gif" loading="lazy"/>-->
+        </div>
+        <div>
+        <div class='text-container'>
+          <h2>chisel_editor</h2>
+          <p class='tagline'>a vim-like text editor to sculpt text</p>
+          <p>while both acts of creation, the methods of writing and sculpting fundamentally vary in form. chisel_editor reimagines writing as a process of removal. a user starts out with an infinite block of characters, a stone, and can only remove characters from it, likening the creation of a poem to that of a statue.</p>
+          <p>technologies: Python</p>
+          <a href="https://github.com/dialmond/chisel_editor" target="_blank"><button class='button'>view on github</button></a>
+        </div>
+        </div>
+      </div>
+
+      <div class="project"><!--april 2023-->
+        <div class='image-container'>
+          <img src="assets/images/pinup_1.png" loading="lazy"/>
+          <img src="assets/images/pinup_2.png" loading="lazy"/>
+          <img src="assets/images/pinup_3.png" loading="lazy"/>
+        </div>
+        <div>
+        <div class='text-container'>
+          <h2>Pinup Posters Courier Collective</h2>
+          <p class='tagline'>bike messenger and programmer</p>
+          <p>My freshman year of college I worked as a bike messenger for a local collective, delivering and hanging up hundreds of posters every week to store fronts, community buildings, and walls across the city.</p>
+          <p>The next year I returned with a web application I created from scratch to manage various aspects of the business -- an internal wiki to store training documents, a map to catalogue postering spots across different neighborhoods, a custom calendar for tracking events, and time management tools to manage employee payroll.</p>
+          <p>technologies: React, Django, Sqlite3, Mapbox (JS)</p>
+        </div>
+        </div>
+      </div>
+
+      </div>
+
+      <h2 id="older-projects" class='overlayed'>Older Projects</h2>
+      <p>You can view the <a href="oldsite/index.html">older version of this website</a> for more things I've made.</p>
+    </section>
+  </main>
+  <footer>
+    <div>you can contact me at <a href="mailto:cdiamond@cmu.edu?subject=hey" class='underline'>cdiamond [@] cmu [.] edu</a></div>
+  </footer>
+
+  <div class='lightbox hidden'>
+    <div class="lightbox-image-wrapper">
+      <div class='lightbox-image-container'></div>
+    </div>
+    <div class='lightbox-text-container'>
+      <span class="close">&#10006;</span>
+      <div class='text-container'></div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

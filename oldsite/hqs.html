@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="haiq(r)s">
+  <meta name="author" content="Cassidy Diamond">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="img/hqs/favicon.ico">
+
+  <title>haiq(r)s</title>
+
+  <style>
+	@font-face {
+	  font-family:"Futura";
+	  src: url("fonts/FuturaBook.ttf") format("truetype");
+	}
+	:root {
+    --main: #f29007;
+    --link: #07f290;
+    --alt: #9007f2;
+    --bg: #f8f8f8;
+  }
+
+	*{box-sizing:border-box;}
+	html{
+    background-color:var(--bg);
+    padding:0 1em;
+    font-family: system-ui;
+    line-height: 1.5;
+	}
+	main{
+    font-size:1.8em;
+    max-width:55rem;
+    margin: 0 auto;
+    color: #333;
+	}
+  header {
+    display: flex;
+    align-items: center;
+  }
+	header img{
+    width:3em;
+    padding:4px;
+    image-rendering: optimizespeed;
+  }
+	header h1{
+    font-size: 3em;
+    font-family: "Futura", system-ui;
+    font-weight: bold;
+    line-height:1;
+    color: var(--main);
+    margin-left: 1rem;
+	}
+  .haiku{
+    white-space: pre;
+    display: inline-block;
+    font-family: monospace;
+    /*color: var(--main);*/
+    font-weight: bold;
+
+    color: black;
+    background: white;
+    padding: 4px 8px;
+  }
+  main p:first-of-type{
+    margin-top: 0;
+  }
+	.octothorpe::before{
+    content: "";
+    position: absolute;
+    margin-left: -1.2em;
+    margin-top: 13px; /* magic number */
+    background: url("img/hqs/octothorpe.png") no-repeat center;
+    background-size: cover;
+    /*image-rendering: optimizespeed;*/
+    width: 1em;
+    height: 1em;
+    border: 4px solid transparent;
+    box-sizing: border-box;
+	}
+  .quoteContainer{
+    font-size: 0.8em;
+    padding:1em 1em 0 1em;
+    position: relative;
+    width: fit-content;
+    margin: 1rem auto;
+	}
+	.quoteContainer::before, .quoteContainer p:last-of-type::after{
+    content: '‟';
+    position: absolute;
+    font-size: 1.5em;
+	}
+	.quoteContainer p, .quoteContainer::before, .quoteContainer p:last-of-type::after{
+    margin: 0;
+    font-style: italic;
+    color: var(--gray);
+	}
+	.quoteContainer::before{left: 0; top: 0.25em;}
+	.quoteContainer p:last-of-type::after{right: 0; margin-top:-0.25em;}
+	.quoteContainer span{
+    font-size:0.8em;
+    /*float:right;*/
+    width: 100%;
+    display: block;
+    text-align: right;
+    margin-top: 0.5em;
+	}
+  li:not(:first-of-type){
+    padding-top: 0.5rem;
+  }
+  a{
+    color: var(--alt);
+    text-decoration:none;
+    font-weight:bold;
+	}
+	a:hover{text-decoration: underline; font-style:italic;}
+  footer{
+	   max-width: 70rem;
+	   margin: 0 auto;
+	   margin-top:3em;
+	   text-align: center;
+	   font-size: 1.1em;
+	   background-color: rgba(0,0,0,0.07);
+	   padding: 1px;
+	}
+	.scramble{font-family:monospace; background-color: rgba(0, 0, 0, 0.1); padding:2px;}
+
+	@media screen and (max-width: 1020px) {
+	  .octothorpe::before{
+       position: unset;
+       margin-left: 0;
+       margin-right: 5px;
+       display: inline-block;
+       vertical-align: sub;
+	  }
+    header {justify-content: center;}
+	}
+	@media screen and (max-width: 450px) {
+	    header {flex-direction:column;}
+	    header h1{margin: 1rem 0 2rem 0; text-align:center;}
+      header img {
+        width: unset;
+        margin: 0 auto;
+        padding: 2em 1em 1em 1em;
+      }
+      header .haiku {
+        font-size: 1.6em;
+        margin-top: 1rem;
+        margin-bottom: 0.8rem;
+      }
+      .octothorpe::before {display: none;}
+	}
+  @media screen and (max-width: 400px) {
+    main {font-size: 1.5em;}
+    header h1{font-size: 2.5em;}
+	}
+
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <!--<img src='img/hqs/transqr.png' alt='qr code that encodes "haiq(r)s"'>-->
+      <span class='haiku'>ha***
+iq(r***
+)s***</span>
+      <h1>haiq(r)s</h1>
+    </header>
+    <p>haiq(r)s is a silly little art idea i'm exploring where i place qr codes encoding haikus around campus. i made this page to pretentiously explain why i'm excited about this to you, and hopefully, to encourage you to contribute.</p>
+    <p>i wrote 16 total haikus spread across various buildings and locations. some feel hidden, others less so. there is no map. i doubt any one person will ever see them all.</p>
+    <h2 class='octothorpe'>why use qr codes?</h2>
+    <ul>
+      <li><b>subverts the use case</b> - reader expects a link/advertisement but is instead surprised with a poem</li>
+      <li><b>interaction with the text</b> - the practice of having to scan a qr code with ones phone forces the reader to interact with the poem, transforming them into an active agent in uncovering / discovering the text. this process could help emphasize potential themes of technology, curiosity, and mindfulness</li>
+      <li><b>presentness and space</b> - a qr code can be put up anywhere but requires the user to be in the same location to scan it. this creates a unifying sense of <i>presentness</i> between the qr code and the haiku's content</li>
+    </ul>
+    <h2 class='octothorpe'>why haikus? (five-seven-five)</h2>
+    <ul>
+      <li>qr codes can't encode much data and haikus are really fucking short</li>
+      <li>haikus are supposed to give the reader a clear depiction of a scene from just a few, elegant syllables. in a way, a haiku is an encoding of a scene into writing just as a qr code is an encoding of data into pixels</li>
+    </ul>
+    <div class="quoteContainer">
+      <p>A real haiku's gotta be as simple as porridge and yet make you see the real thing, like the greatest haiku of them all probably is the one that goes 'The sparrow hops along the veranda, with wet feet.' By Shiki. You see the wet footprints like a vision in your mind and yet in those few words you also see all the rain that's been falling that day and almost smell the wet pine needles.</p>
+      <span>- <i>Dharma Bums</i> by Jack Kerouac</span>
+    </div>
+    <h2 class='octothorpe'>you should contribute!</h2>
+    <p>if you're interested in the idea i encourage you to write and place your own haikus somewhere across campus! there are far too few secrets here at CMU, let's add a few more.</p>
+  </main>
+
+  <footer>
+    <p>made by <a href="index.html"><span class="scramble">Cassidy</span></a> while struggling to write haikus</p>
+  </footer>
+  <script src='js/scramble.js'></script>
+</body>
+</html>
