@@ -451,6 +451,12 @@ section p, section li {
 .image-container > *:hover {
   filter: grayscale(0%);
 }
+/*object[type="application/pdf"] {
+  border: 1px solid var(--color-primary);
+  height: 500px;
+  aspect-ratio: 8.5 / 11;
+  min-width: 50%;
+}*/
 .asciicast {
   margin: 0 !important;
   background: transparent !important;
