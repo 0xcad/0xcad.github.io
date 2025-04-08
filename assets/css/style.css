@@ -276,6 +276,24 @@ section p, section li {
 .mb-3 { margin-bottom: 1rem; }
 .mb-4 { margin-bottom: 1.5rem; }
 
+.pgp {
+  display: grid;
+  grid-template-columns: auto minmax(0,1fr) auto;
+  white-space: nowrap;
+  align-items: baseline;
+  column-gap: 0.5rem;
+}
+.pgp .pgp-scroll {
+  font-family: monospace;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 2px;
+  overflow: clip;
+  text-overflow: ellipsis;
+}
+.pgp .pgp-scroll span {
+  display: inline-block;
+}
+
 .overlayed { position: relative; }
 .overlayed::after {
   content: "░░░░░░░";
@@ -293,7 +311,7 @@ section p, section li {
 
 .col-two {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   column-gap: 2rem;
 }
 .col-two > div:first-of-type {
