@@ -318,7 +318,7 @@ section p, section li {
   border-right: 2px solid var(--color-text);
 }
 .about-image {
-  background-image: url("../images/me_400.png");
+  background-image: url("../images/me_400.webp");
   background-color: var(--color-primary);
   background-blend-mode: lighten;
   background-size: contain;
