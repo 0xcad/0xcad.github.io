@@ -44,7 +44,7 @@ function extendNav() {
   const projects = document.querySelectorAll('.project');
 
   projects.forEach((project) => {
-    var title = project.querySelector('h2').innerText;
+    var title = project.querySelector('h3').innerText;
     var slug = title.toLowerCase().replaceAll(" ", "-").replaceAll(":", "-").replaceAll(".", "-");
     project.id = slug;
 
