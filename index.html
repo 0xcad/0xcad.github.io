@@ -1,15 +1,33 @@
 <!--hey :))-->
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="cassidy diamond's personal website">
+  <meta name="description" content="The personal webpage of Cassidy Diamond, a recent CMU grad who is passionate about music, biking, creative programming, and urban spaces.">
   <meta name="author" content="cassidy diamond">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .hero h1::after {
+      content: "Cassidy Diamond";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: transparent;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='4px' width='50px'><line style='stroke: rgb(255,87,51); stroke-width: 3; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;' vector-effect='non-scaling-stroke'  x1='-50' y1='0' x2='50' y2='0' /></svg>");
+      background-clip: text;
+      -webkit-background-clip: text;
+      transition: 0.2s;
+      transform: translate(0.5rem, 0.5rem);
+    }
+  </style>
 
-  <title>cassidy diamond</title>
+  <title>cassidy diamond's personal webpage</title>
 
 </head>
 
@@ -29,7 +47,6 @@
     <div class='hero'>
       <div>
       <h1>Cassidy Diamond</h1>
-      <h1 class='shadow'>Cassidy Diamond</h1>
       <p>CMU '25, Computer Science and Mathematical Sciences</p>
       </div>
     </div>
@@ -40,7 +57,7 @@
       <div class="col-two">
         <div>
           <div class="text-container">
-            <p><span class="small-caps">I am an undergraduate fourth-year</span> at Carnegie Mellon University studying Computer Science and Mathematical Sciences. I'm currently seeking work as a full stack developer or systems engineer (especially at social-minded organizations), but present jobs include radio station Chief Engineer, bike mechanic, and school mascot. I'm passionate about music, biking, creative programming, and urban spaces.</p>
+            <p><span class="small-caps">I am a recent grad</span> of Carnegie Mellon University with degrees in Computer Science and Mathematical Sciences. I'm currently seeking work as a full stack developer or systems engineer (especially at social-minded organizations), but past jobs include radio station Chief Engineer, bike mechanic, and school mascot. I'm passionate about music, biking, creative programming, and urban spaces.</p>
             <div class="mt-4">
               <a href="assets/Cassidy_Diamond_resume.pdf" target="_blank"><button class='button mr-2 mb-2'>Resume</button></a>
               <a href="mailto:dialmond@protonmail.com?subject=hey"><button class='button'>Email</button></a>
@@ -66,10 +83,10 @@
 
       <div class="project"><!--may 2023-aug 2024-->
         <div class='image-container'>
-          <img src="assets/images/diderot_1.webp" loading="lazy" title="the AI teaching assistant responds to a student question"/>
-          <img src="assets/images/diderot_3.webp" loading="lazy" title="business clients can use a dashboard to generate a widget to embed onto their page"/>
-          <img src="assets/images/diderot_2.webp" loading="lazy" title="the Diderot Chat widget allows application users to dynamically ask and answer questions on any webpage"/>
-          <img src="assets/images/diderot_4.webp" loading="lazy" title="diagram of Diderot's robust AWS stack"/>
+          <img src="assets/images/diderot_1.webp" loading="lazy" title="the AI teaching assistant responds to a student question" alt="React Diderot website showing conversation with AI teaching assistant"/>
+          <img src="assets/images/diderot_3.webp" loading="lazy" title="business clients can use a dashboard to generate a widget to embed onto their page" alt="Dashboard with widget copy/paste code to implement AI chat on any website"/>
+          <img src="assets/images/diderot_2.webp" loading="lazy" title="the Diderot Chat widget allows application users to dynamically ask and answer questions on any webpage" alt="Conversation with Diderot Chat on Wikipedia page"/>
+          <img src="assets/images/diderot_4.webp" loading="lazy" title="diagram of Diderot's robust AWS stack" alt="diagram showing Diderot's AWS deployment"/>
         </div>
         <div>
         <div class='text-container'>
@@ -90,9 +107,9 @@
 
       <div class="project"><!--aug 2024-->
         <div class='image-container'>
-          <img src="assets/images/wrct_db_1.webp" loading="lazy"/>
-          <img src="assets/images/wrct_db_2.webp" loading="lazy"/>
-          <img src="assets/images/wrct_db_3.webp" loading="lazy"/>
+          <img src="assets/images/wrct_db_1.webp" loading="lazy" alt="Django homepage for WRCT music database"/>
+          <img src="assets/images/wrct_db_2.webp" loading="lazy" alt="List of albums in WRCT music database"/>
+          <img src="assets/images/wrct_db_3.webp" loading="lazy" alt="Gamified leaderboard feature in WRCT music database"/>
         </div>
         <div>
         <div class='text-container'>
@@ -108,9 +125,9 @@
 
       <div class="project"><!--may 2023-aug 2024-->
         <div class='image-container'>
-          <img src="assets/images/wrct.webp" loading="lazy"/>
-          <img src="assets/images/wrct_2.webp" loading="lazy" title='docker network diagram'/>
-          <img src="assets/images/wrct_3.webp" loading="lazy" title='using grafana and prometheus to monitor station health'/>
+          <img src="assets/images/wrct.webp" loading="lazy" alt="WRCT website showing added now playing and top ten features"/>
+          <img src="assets/images/wrct_2.webp" loading="lazy" title='docker network diagram' alt="Docker network diagram of WRCT infrastructure"/>
+          <img src="assets/images/wrct_3.webp" loading="lazy" title='using grafana and prometheus to monitor station health' alt="Grafana/Prometheus dashboard of WRCT infrastructure"/>
         </div>
         <div>
         <div class='text-container'>
@@ -129,7 +146,7 @@
           <!--<object data="https://cassidydiamond.me/love-languages/paper/paper.pdf" type="application/pdf">
           <a href="love-languages/paper/paper.pdf"><button class='button'>read the paper</button></a>
           </object>-->
-          <img src="assets/images/love_languages.webp" loading="lazy"/>
+          <img src="assets/images/love_languages.webp" loading="lazy" alt="image from the paper of a printed letter in CMU's school of computer science"/>
         </div>
         <div>
         <div class='text-container'>
@@ -146,7 +163,7 @@ Complete Language</p>
 
       <div class="project fun"><!--aug 2024-->
         <div class='image-container'>
-          <img src="assets/images/barrel_raft.webp" loading="lazy"/>
+          <img src="assets/images/barrel_raft.webp" loading="lazy" alt="me on a barrel raft I built in Pittsburgh's Monongahela river"/>
         </div>
         <div>
         <div class='text-container'>
@@ -175,8 +192,8 @@ Complete Language</p>
 
       <div class="project fun"><!--jul 2024-->
         <div class='image-container'>
-          <img src="assets/images/NYFE_1.webp" loading="lazy"/>
-          <img src="assets/images/NYFE_2.webp" loading="lazy"/>
+          <img src="assets/images/NYFE_1.webp" loading="lazy" alt="New York Fruit Exchange market layout"/>
+          <img src="assets/images/NYFE_2.webp" loading="lazy" alt="New York Fruit Exchange detail view for mango prices over time"/>
         </div>
         <div>
         <div class='text-container'>
@@ -191,8 +208,8 @@ Complete Language</p>
 
       <div class="project fun"><!--jul 2024-->
         <div class='image-container'>
-          <img src="assets/images/pdhaquotidien_1.webp" loading="lazy"/>
-          <img src="assets/images/pdhaquotidien_2.webp" loading="lazy"/>
+          <img src="assets/images/pdhaquotidien_1.webp" loading="lazy" alt="cover of PDHA texts zine"/>
+          <img src="assets/images/pdhaquotidien_2.webp" loading="lazy" alt="PDHA texts zine conversation"/>
         </div>
         <div>
         <div class='text-container'>
@@ -206,7 +223,7 @@ Complete Language</p>
 
       <div class="project fun"><!--feb 2024-->
         <div class='image-container'>
-          <img src="assets/images/ski_bike.webp" loading="lazy"/>
+          <img src="assets/images/ski_bike.webp" loading="lazy" alt="ski bike I made"/>
           <video src="assets/images/ski_bike.mp4" controls></video>
         </div>
         <div>
@@ -240,9 +257,9 @@ Complete Language</p>
 
       <div class="project"><!--april 2023-->
         <div class='image-container'>
-          <img src="assets/images/pinup_1.webp" loading="lazy"/>
-          <img src="assets/images/pinup_2.webp" loading="lazy"/>
-          <img src="assets/images/pinup_3.webp" loading="lazy"/>
+          <img src="assets/images/pinup_1.webp" loading="lazy" alt="internal map view of postering locations"/>
+          <img src="assets/images/pinup_2.webp" loading="lazy" alt="internal Wiki view for Pinup"/>
+          <img src="assets/images/pinup_3.webp" loading="lazy" alt="Poster Calendar view for Pinup"/>
         </div>
         <div>
         <div class='text-container'>

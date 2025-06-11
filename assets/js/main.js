@@ -8,7 +8,7 @@ function throttle(callback, wait) {
 
 // header shadow js
 const heroHeader = document.querySelector('.hero h1');
-const heroShadow = document.querySelector('.hero h1.shadow');
+//const heroShadow = document.querySelector('.hero h1.shadow');
 
 document.body.addEventListener('mousemove', throttle(function (e) {
   /* Draw a vector between the mouse and the position of the header element
@@ -29,7 +29,8 @@ document.body.addEventListener('mousemove', throttle(function (e) {
 
   let xDist = -1 * dist * Math.cos(angle);
   let yDist = -1 * dist * Math.sin(angle);
-  heroShadow.style.transform = `translate(${xDist}px, ${yDist}px)`;
+  document.styleSheets[1].cssRules[0].style.transform = `translate(${xDist}px, ${yDist}px)`;
+  //heroShadow.style.transform = `translate(${xDist}px, ${yDist}px)`;
 }, 100));
 
 // navbar js

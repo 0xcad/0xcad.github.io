@@ -131,7 +131,7 @@ h3 { font-size: 1.5em; margin: 0.8em 0; }
 section > h3 {
   counter-increment: subsection;
 }
-h1:not(.shadow)::before, h2::before, h3.overlayed::before {
+h1::before, h2::before, h3.overlayed::before {
   content: counter(chapter) ". ";
   font-family: "Computer Modern", serif;
   font-size: 0.6em;
@@ -407,19 +407,6 @@ section p, section li {
   margin: 0.75rem 0 0 0.25rem;
   max-width: 75%;
 }
-/*.hero h1:not(.shadow) { z-index: 1; }*/
-.shadow {
-  position: absolute;
-  transform: translate(0.5rem, 0.5rem);
-  color: transparent;
-  /*color: rgba(255,87,51,0.1);*/
-
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='4px' width='50px'><line style='stroke: rgb(255,87,51); stroke-width: 3; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;' vector-effect='non-scaling-stroke'  x1='-50' y1='0' x2='50' y2='0' /></svg>");
-  background-clip: text;
-  -webkit-background-clip: text;
-  /*background-attachment: fixed;*/
-  transition: 0.2s;
-}
 
 #projects .project {
   display: grid;
@@ -615,12 +602,12 @@ section p, section li {
   section {
     padding: 2rem;
   }
-  .hero h1 { font-size: min(16vw, 4em); }
-  .hero h1.shadow {
+  .hero h1 { font-size: min(16vw, 4em); z-index: 1; }
+  .hero h1::after {
     transform: translate(-0.5rem,-0.5rem) !important;
   }
-  .hero h1:not(.shadow) {z-index: 1;}
-  h2, h3.overlayed, .hero p {
+  .hero h1::after {z-index: -1;}
+  h1,h1::after,  h2, h3.overlayed, .hero p {
     padding-left: 2rem;
   }
   .nav-list ul { display: none; }
