@@ -296,6 +296,7 @@ section p, section li {
 .overlayed { position: relative; }
 .overlayed::after {
   content: "░░░░░░░";
+  pointer-events: none;
   position: absolute;
   top: 0;
   left: 0;
